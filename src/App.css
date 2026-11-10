@@ -459,10 +459,10 @@ section:last-child {
 /* Mobile navigation */
 @media (max-width: 700px) {
   .floating-nav {
-    top: 12px;
-    right: 16px;
-    left: auto;
-    transform: none;
+  top: 12px;
+  left: 16px;
+  right: auto;
+  transform: none;
     width: auto;
     min-width: auto;
     padding: 4px;
@@ -566,6 +566,13 @@ section:last-child {
   box-shadow: 0 8px 30px rgba(13, 27, 42, 0.12);
 }
 
+/* Navigation links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .floating-nav a {
   display: block;
   padding: 10px 14px;
@@ -581,4 +588,142 @@ section:last-child {
 .floating-nav a:hover {
   background: #0D1B2A;
   color: #F7F5F2;
+}
+
+/* Hamburger button - hidden on desktop */
+.menu-toggle {
+  display: none;
+}
+
+
+/* ================================
+   MOBILE NAVIGATION
+================================ */
+
+@media (max-width: 700px) {
+
+  .floating-nav {
+    top: 12px;
+    right: 16px;
+    left: auto;
+    transform: none;
+
+    width: auto;
+    padding: 5px;
+    border-radius: 14px;
+
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: transparent;
+    border: none;
+    color: #0D1B2A;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 6px 10px;
+    line-height: 1;
+  }
+
+  /* Hide links until the hamburger is clicked */
+  .nav-links {
+    display: none;
+  }
+
+  /* Dropdown menu */
+  .floating-nav.menu-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    position: absolute;
+    top: 55px;
+left: 0;
+right: auto;
+
+    width: 155px;
+    padding: 8px;
+    gap: 3px;
+
+    background: rgba(247, 245, 242, 0.98);
+    border: 1px solid rgba(13, 27, 42, 0.12);
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(13, 27, 42, 0.15);
+  }
+
+  .floating-nav a {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  /* About section on mobile */
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+
+/* ================================
+   PROJECT CONTENT
+================================ */
+
+.project-content span {
+  display: block;
+  max-width: 280px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+
+/* ================================
+   ABOUT SECTION
+================================ */
+
+.about-section h2 {
+  max-width: 850px;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  margin-top: 40px;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(13, 27, 42, 0.72);
+}
+
+
+/* ================================
+   PROJECT CARD COLORS
+================================ */
+
+.fraudlens-card::before {
+  background: #FF6B35;
+}
+
+.compiler-card::before {
+  background: #635BFF;
+}
+
+.pickmate-card::before {
+  background: #22C55E;
+}@media (max-width: 700px) {
+  .floating-nav {
+    left: 16px !important;
+    right: auto !important;
+    transform: none !important;
+  }
+
+  .floating-nav.menu-open .nav-links {
+    left: 0 !important;
+    right: auto !important;
+  }
 }
