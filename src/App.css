@@ -455,10 +455,8 @@ section:last-child {
   align-items: center;
   gap: 4px;
 }
-
-/* Mobile navigation */
-@media (max-width: 700px) {
   /* Mobile navigation */
+/* Mobile navigation */
 @media (max-width: 700px) {
   .floating-nav {
     top: 12px;
@@ -509,7 +507,6 @@ section:last-child {
     padding: 10px 14px;
     font-size: 0.9rem;
   }
-}
 }.project-content span {
   display: block;
   max-width: 280px;
