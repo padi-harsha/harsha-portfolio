@@ -1,15 +1,27 @@
 import "./App.css";
-
+import { useState } from "react";
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
-      <nav className="floating-nav">
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#experience">Experience</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
+      <nav className={`floating-nav ${menuOpen ? "menu-open" : ""}`}>
+  <button
+    className="menu-toggle"
+    onClick={() => setMenuOpen(!menuOpen)}
+    aria-label="Toggle navigation menu"
+  >
+    ☰
+  </button>
+
+  <div className="nav-links">
+    <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
+    <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+    <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
+    <a href="#experience" onClick={() => setMenuOpen(false)}>Experience</a>
+    <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
+    <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+  </div>
 </nav>
 
       <main>
